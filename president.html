@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <title>president</title>
- 
+</head>
+<style>
+    label {
+        display: inline-block;
+        width: 220px;
+    }
+    
+    p {
+        background-color: rgb(173, 196, 72);
+        color: rgb(156, 100, 100);
+        display: inline;
+    }
+    
+    p:hover {
+        background-color: rgba(153, 216, 93, 0.712);
+        color: rgb(37, 43, 40);
+        display: inline;
+    }
+    
+    h2 {
+        background-color: rgb(197, 65, 164);
+        color: rgb(53, 19, 19);
+        display: inline-block;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    </style>
 <body>
     <h2>president guess by Saibabu Devarapalli</h2>
 
@@ -14,7 +40,7 @@
     <label for="form1_guessname">Guess the president</label>
     <input type ="text" id="form1_guessname" name="form1_guessname" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input id="guessf1" type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
 
@@ -37,8 +63,14 @@ function checkGuess(){
     } else {
         wrong+=1;
         alert("Wrong President")
-        out.innerHTML ="wrong"+wrong
+        out.innerHTML ="wrong"+wrong;
+        if(wrong >=3){
+            document.getElementById("guessf1").setAttribute("onclick","javascript:gameover()");
+            }
     }
+}
+function gameover () {
+    alert("sorry, game over")
 }
 var useImage=1;
         function swapImage(){
