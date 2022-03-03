@@ -40,6 +40,28 @@ function checkGuess(){
         out.innerHTML ="wrong"+wrong
     }
 }
+var useImage=1;
+        function swapImage(){
+            switch(useImage){
+                case 1:
+                document.getElementById('im').src="american-bald-eagle-head-in-front-of-american-flag-950701786-5b85581346e0fb0025e00b06.jpg";
+                useImage=2;
+                break;
+                case 2:
+                document.getElementById('im').src="istockphoto-483585627-612x612.jpg";
+                useImage=3;
+                break;
+                case 3:
+                document.getElementById('im').src="Vulture.jpg";
+                useImage=1;
+                break;
+            }
+        }
+
+</script>
+<div>
+    <img src="Vulture.jpg" id="im" width="100" height="100" onclick="swapImage()">
+</div>
 </script>
 </body>
 </html> 
